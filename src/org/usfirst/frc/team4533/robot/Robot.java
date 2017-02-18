@@ -24,6 +24,8 @@ public class Robot extends IterativeRobot {
 	//public static OI oi;
  
     private CommandGroup autonomousCommand;
+    
+    public static Sensors sensors;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -40,6 +42,7 @@ public class Robot extends IterativeRobot {
     	ShooterSystem.initialize();
     	OI.initialize();
 
+    	sensors = new Sensors();
     }
     	
 	
@@ -54,6 +57,8 @@ public class Robot extends IterativeRobot {
 	
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
+		Sensors.fetchData();
+		log();
 	}
 	/**
 	 * This autonomous (along with the chooser code above) shows how to select between different autonomous modes
@@ -73,6 +78,7 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        Sensors.fetchData();
     }
 
     public void teleopInit() {
@@ -88,6 +94,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        Sensors.fetchData();
         SmartDashboard.putBoolean("Gear", DriveSystem.hasGear());
         SmartDashboard.putBoolean("Climber On?", ClimbSystem.isOn());
         SmartDashboard.putNumber("Front Distance", DriveSystem.ultraSonic());
@@ -102,5 +109,6 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+        Sensors.fetchData();
     }
 }
