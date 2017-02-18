@@ -5,12 +5,10 @@ import org.usfirst.frc.team4533.robot.subsystems.ClimbSystem;
 import org.usfirst.frc.team4533.robot.subsystems.DriveSystem;
 import org.usfirst.frc.team4533.robot.subsystems.ShooterSystem;
 
-
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,7 +23,7 @@ public class Robot extends IterativeRobot {
  
     private CommandGroup autonomousCommand;
   
-    public static DriveSystem drivetrain;
+    public static DriveSystem drive;
     public static ClimbSystem climber;
     public static ShooterSystem shooter;
     public static OI oi;
@@ -40,7 +38,7 @@ public class Robot extends IterativeRobot {
     		RobotMap.setPracticeBot();
     	}
     	
-    	drivetrain = new DriveSystem();
+    	drive = new DriveSystem();
     	climber = new ClimbSystem();
     	shooter = new ShooterSystem();
     	oi = new OI();

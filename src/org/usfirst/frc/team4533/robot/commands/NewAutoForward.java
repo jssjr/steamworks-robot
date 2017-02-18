@@ -1,31 +1,29 @@
 package org.usfirst.frc.team4533.robot.commands;
 
+import org.usfirst.frc.team4533.robot.Robot;
 import org.usfirst.frc.team4533.robot.RobotMap;
-import org.usfirst.frc.team4533.robot.subsystems.DriveSystem;
 import org.usfirst.frc.team4533.robot.utils.SensorData;
 import org.usfirst.frc.team4533.robot.utils.SensorUtilities;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 public class NewAutoForward extends Command {
-	private DriveSystem drive;
 
 	private static double DEFAULT_DRIVE_SPEED;
 
 	public NewAutoForward(double speed) {
-		this.drive = DriveSystem.getInstance();
-		requires(this.drive);
+		requires(Robot.drive);
 		DEFAULT_DRIVE_SPEED = speed;
 	}
 
 	@Override
 	protected void end() {
-		this.drive.stop();
+		Robot.drive.stop();
 	}
 
 	@Override
 	protected void execute() {
-		this.drive.forward(DEFAULT_DRIVE_SPEED);
+		Robot.drive.forward(DEFAULT_DRIVE_SPEED);
 	}
 
 	@Override
