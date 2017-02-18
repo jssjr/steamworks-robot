@@ -11,7 +11,7 @@ public class Sensors {
 	private static final byte syncByte = 94;
 	private static final byte endSec = 126;
 	
-	public void Sensors() {
+	public Sensors() {
 		// We should probably set some things up here...
 	}
 	
