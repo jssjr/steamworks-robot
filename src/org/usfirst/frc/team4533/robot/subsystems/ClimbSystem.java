@@ -17,7 +17,7 @@ public class ClimbSystem extends Subsystem {
 	Spark climbMotor;
 	public static boolean isClimb;
 	
-	private ClimbSystem() {
+	public ClimbSystem() {
 		climbMotor = new Spark(RobotMap.CLIMB_MOTOR);
 	}
 	
