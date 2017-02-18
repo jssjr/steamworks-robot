@@ -23,7 +23,6 @@ public class DriveSystem extends Subsystem {
 
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
-	private static DriveSystem INSTANCE;
 
 	CANTalon rightMaster;
 	CANTalon leftMaster;
@@ -63,16 +62,6 @@ public class DriveSystem extends Subsystem {
 		leftSlave.set(RobotMap.Motor_Left_Master);
 		ultraSonic = new AnalogInput(RobotMap.FRONTDISTANCE);
 		di = new DigitalInput(RobotMap.GEAR_SENSOR);
-	}
-
-	public static void initialize() {
-		if (INSTANCE == null) {
-			INSTANCE = new DriveSystem();
-		}
-	}
-
-	public static DriveSystem getInstance() {
-		return INSTANCE;
 	}
 
 	public void drive(double left, double right) {

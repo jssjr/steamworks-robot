@@ -9,22 +9,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class ShooterSystem extends Subsystem {
 	
-	private static ShooterSystem INSTANCE;
 	CANTalon flyWheel;
 	Spark door;
 	public ShooterSystem() {
 		flyWheel = new CANTalon(RobotMap.FLY_WHEEL_MOTOR);
 		door = new Spark(RobotMap.DOOR_MOTOR);
-	}
-	
-	public static void initialize() {
-		if (INSTANCE == null) {
-			INSTANCE = new ShooterSystem();
-		}
-	}
-	
-	public static ShooterSystem getInstance() {
-		return INSTANCE;
 	}
 
 	public void startFlywheel() {
