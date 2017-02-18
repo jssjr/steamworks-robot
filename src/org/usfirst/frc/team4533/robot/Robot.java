@@ -24,8 +24,6 @@ public class Robot extends IterativeRobot {
  
     private CommandGroup autonomousCommand;
     
-    public static Sensors sensors;
-
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -40,8 +38,6 @@ public class Robot extends IterativeRobot {
     	ClimbSystem.initialize();
     	ShooterSystem.initialize();
     	OI.initialize();
-
-    	sensors = new Sensors();
     }
     	
 	
