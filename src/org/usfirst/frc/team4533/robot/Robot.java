@@ -24,6 +24,11 @@ public class Robot extends IterativeRobot {
 	//public static OI oi;
  
     private CommandGroup autonomousCommand;
+  
+    public static DriveSystem drivetrain;
+    public static ClimbSystem climber;
+    public static ShooterSystem shooter;
+    public static OI oi;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -35,11 +40,10 @@ public class Robot extends IterativeRobot {
     		RobotMap.setPracticeBot();
     	}
     	
-    	DriveSystem.initialize();
-    	ClimbSystem.initialize();
-    	ShooterSystem.initialize();
-    	OI.initialize();
-
+    	drivetrain = new DriveSystem();
+    	climber = new ClimbSystem();
+    	shooter = new ShooterSystem();
+    	oi = new OI();
     }
     	
 	
